@@ -7,8 +7,7 @@ const handlePending = (state) => {
 const handleRejected = (state, action) => {
     state.isLoading = false;
     state.error = action.payload;
-}
-
+};
 
 const contactsSlice = createSlice({
     name: "contacts",
@@ -36,8 +35,7 @@ const contactsSlice = createSlice({
         [deleteContact.fulfilled](state, action) {
             state.isLoading = false;
             state.error = null;
-            console.log(state.items);
-            // state.items.filter(action.payload !== id)
+            state.items.filter(contact => contact.id !== action.payload.id);
         },
         [deleteContact.rejected]: handleRejected,
     },

@@ -1,9 +1,9 @@
-import { getContacts, getFilter } from "../../redux/selectors"
+import { selectContacts, selectFilter } from "../../redux/selectors"
 import { useSelector } from "react-redux";
 
 const ContactsBar = () => {
-    const contacts = useSelector(getContacts);
-    const filter = useSelector(getFilter);
+    const contacts = useSelector(selectContacts);
+    const filter = useSelector(selectFilter);
     const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
     const isAnyContactSaved = contacts.length > 0;
     return (

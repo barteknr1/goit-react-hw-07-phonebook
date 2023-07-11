@@ -21,6 +21,7 @@
 	justify-content: space-between;
 	align-items: center;
 	gap: 5px;
+	border: 1px solid;
 }
 .delete {
 	font-size: 14px;

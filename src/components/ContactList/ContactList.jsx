@@ -9,7 +9,7 @@ const ContactList = () => {
   return (
     <>
       {contacts.length > 0 ? (
-        <ul>
+        <ul className={css.contactList}>
           <ContactListElement />
         </ul>
       ) : (
